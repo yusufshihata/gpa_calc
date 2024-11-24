@@ -3,8 +3,8 @@
 #include <math.h>
 #include <string>
 
-#include "includes/course.h"
-#include "includes/student.h"
+#include "course.h"
+#include "student.h"
 
 #define MAX_STUDENTS 400
 #define MAX_COURSES 40
