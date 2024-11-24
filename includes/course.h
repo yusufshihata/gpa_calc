@@ -1,10 +1,13 @@
 #pragma once
 
-#include <iostream>
+#ifndef COURSE_H
+#define COURSE_H
+
 #include <string>
 #include <vector>
+#include <iostream>
 
-#define MAX_STUDENTS 700
+#define MAX_STUDENTS 400
 
 class Course {
 private:
@@ -14,7 +17,6 @@ private:
     int highest;
     double studentsGrade[MAX_STUDENTS];
 public:
-    Course() {}
     Course(int id, std::string courseName, int hours, int highest);
     std::string getName();
     int getHours();
@@ -47,8 +49,6 @@ Course::Course(int id, std::string courseName, int hours, int highest) {
     this->courseName = courseName;
     this->hours = hours;
     this->highest = highest;
-
-    courses.push_back(*this);
 }
 
 void Course::showCourseInfo() {
@@ -57,3 +57,5 @@ void Course::showCourseInfo() {
     std::cout << "Number of hours: " << this->hours << "\n";
     std::cout << "The highest final grade: " << this->highest << "\n";
 }
+
+#endif

@@ -1,10 +1,12 @@
 #pragma once
 
-#include <iostream>
+#ifndef STUDENT_H
+#define STUDENT_H
+
 #include <string>
 #include <vector>
-
-
+#include "Course.h"
+#include <iostream>
 
 class Student {
 private:
@@ -143,3 +145,5 @@ void Student::setLevel() {
 
     this->level = level;
 }
+
+#endif
