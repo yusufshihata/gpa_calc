@@ -162,4 +162,7 @@ CMakeFiles/GPACalc.dir/src/main.cpp.o: \
  /usr/include/c++/14.2.1/tr1/poly_laguerre.tcc \
  /usr/include/c++/14.2.1/tr1/riemann_zeta.tcc \
  /home/kyouma/dev/gpa_calc/include/course.h \
- /home/kyouma/dev/gpa_calc/include/student.h
+ /home/kyouma/dev/gpa_calc/include/student.h \
+ /home/kyouma/dev/gpa_calc/include/studentFactory.h \
+ /home/kyouma/dev/gpa_calc/include/courseFactory.h \
+ /home/kyouma/dev/gpa_calc/include/mainmenu.h
