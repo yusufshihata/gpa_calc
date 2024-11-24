@@ -4,6 +4,7 @@ project(GPACalc)
 
 set(CMAKE CXX STANDARD 17)
 
-add_executable(GPACalc src/main.cpp src/student.cpp src/course.cpp)
+set(SOURCES src/main.cpp src/student.h ${YOUR_DIRECTORY}/course.h)
 
-    
+add_executable(GPACalc ${SOURCES})
+

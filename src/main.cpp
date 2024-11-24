@@ -17,7 +17,6 @@ private:
     int highest;
     double studentsGrade[MAX_STUDENTS];
 public:
-    Course() {}
     Course(int id, std::string courseName, int hours, int highest);
     std::string getName();
     int getHours();
@@ -50,8 +49,6 @@ Course::Course(int id, std::string courseName, int hours, int highest) {
     this->courseName = courseName;
     this->hours = hours;
     this->highest = highest;
-
-    courses.push_back(*this);
 }
 
 void Course::showCourseInfo() {
@@ -201,10 +198,8 @@ void Student::setLevel() {
 
 class CourseFactory {
 public:
-    CourseFactory() {}
-    void CreateCourse();
-    Course& findCourse(int id);
-    ~CourseFactory() {}
+    static void CreateCourse();
+    static Course& findCourse(int id);
 };
 
 void CourseFactory::CreateCourse() {
@@ -239,10 +234,8 @@ Course& CourseFactory::findCourse(int id) {
 
 class StudentFactory {
 public:
-    StudentFactory() {}
-    void CreateStudent();
-    Student& findStudent(int id);
-    ~StudentFactory() {}
+    static void CreateStudent();
+    static Student& findStudent(int id);
 };
 
 void StudentFactory::CreateStudent() {
@@ -297,13 +290,11 @@ void MainMenu::ui() {
 }
 
 void MainMenu::addCourseUi() {
-    CourseFactory factory;
-    factory.CreateCourse();
+    CourseFactory::CreateCourse();
 }
 
 void MainMenu::addStudentUi() {
-    StudentFactory factory;
-    factory.CreateStudent();
+    StudentFactory::CreateStudent();
 }
 
 void MainMenu::getStudentInfoUi() {
@@ -312,9 +303,7 @@ void MainMenu::getStudentInfoUi() {
     std::cout << "Enter the student's id: ";
     std::cin >> id;
 
-    StudentFactory factory;
-
-    Student student = factory.findStudent(id);
+    Student student = StudentFactory::findStudent(id);
 
 
     std::cout << "-----------------------------------------------------------------------------------------------------------------------------------------------\n";
@@ -330,9 +319,7 @@ void MainMenu::getCourseInfoUi() {
     std::cout << "Enter the course's id: ";
     std::cin >> id;
 
-    CourseFactory factory;
-
-    Course course = factory.findCourse(id);
+    Course course = CourseFactory::findCourse(id);
 
     std::cout << "-----------------------------------------------------------------------------------------------------------------------------------------------\n";
 
@@ -342,17 +329,15 @@ void MainMenu::getCourseInfoUi() {
 }
 
 void MainMenu::addStudentCourseUi() {
-    StudentFactory factory;
-
     int id;
 
     std::cout << "Please Input the student's id: ";
     std::cin >> id;
 
-    Student *student = &factory.findStudent(id);
+    Student *student = &StudentFactory::findStudent(id);
 
-    for (auto course: courses) {
-        std::cout << course.getCourseId() << ". " << course.getName() << std::endl;
+    for (int i = 0; i < numCourses; ++i) {
+        std::cout << courses[i].getCourseId() << ". " << courses[i].getName() << std::endl;
     }
 
     int idx;
@@ -365,12 +350,11 @@ void MainMenu::addStudentCourseUi() {
 
 void MainMenu::addStudentCourseGradeUi() {
     int id;
-    StudentFactory factory;
 
     std::cout << "Please Enter the student's id: ";
     std::cin >> id;
 
-    Student& student = factory.findStudent(id);
+    Student& student = StudentFactory::findStudent(id);
 
     student.showStudentCourses();
 
