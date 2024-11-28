@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 #include "course.h"
+#include "courseFactory.h"
 #include <iostream>
 
 class Student {
@@ -28,7 +29,7 @@ public:
     void calculateGPA();
     void showStudentCourses();
     void displayStudentInfo();
-    void addCourseGrade(int course_id, double grade);
+    void addCourseGrade(int id, double grade);
     void setName();
     void setLevel();
 };
@@ -113,7 +114,50 @@ float Student::calculateSubjectGPA(int course_id) {
     return gpa;
 }
 
-void Student::addCourseGrade(int course_id, double grade) {
+void Student::addCourseGrade(int id, double grade) {
+    Course course = CourseFactory::findCourse(id);
+
+    if (course.getKind() == 'P' || course.getKind() == 'p') {
+        int oral, finalExam, project, attendance;
+        
+        std::cout << "Attendance Grade: ";
+        std::cin >> attendance;
+
+        std::cout << "Oral Exam Grade: ";
+        std::cin >> oral;
+
+        std::cout << "Project Grade: ";
+        std::cin >> project;
+        
+        std::cout << "Final Exam Grade: ";
+        std::cin >> finalExam;
+
+        grade = oral + finalExam + project + attendance;
+    } else if (course.getKind() == 'T' || course.getKind() == 't') {
+        int oral, finalExam, attendance;
+
+        std::cout << "Attendance Grade: ";
+        std::cin >> attendance;
+
+        std::cout << "Oral Exam Grade: ";
+        std::cin >> oral;
+
+        std::cout << "Final Exam Grade: ";
+        std::cin >> finalExam;
+
+        grade = oral + finalExam + attendance;
+    } else {
+        int attendance, finalExam;
+
+        std::cout << "Attendance Grade: ";
+        std::cin >> attendance;
+
+        std::cout << "Final Exam Grade: ";
+        std::cin >> finalExam;
+
+        grade = attendance + finalExam;
+    }
+
     this->grades.push_back(grade);
     this->calculateGPA();
 }

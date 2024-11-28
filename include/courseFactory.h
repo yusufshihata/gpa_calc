@@ -16,6 +16,7 @@ void CourseFactory::CreateCourse() {
 
     std::string courseName;
     int id, hours, highest;
+    char kind;
 
     id = numCourses;
 
@@ -26,10 +27,14 @@ void CourseFactory::CreateCourse() {
     std::cout << "Course Credit Hours: ";
     std::cin >> hours;
 
+    std::cout << "Subject Type: ";
+    std::cin >> kind;
+
     std::cout << "Final Grade: ";
     std::cin >> highest;
 
-    Course course = Course(id, courseName, hours, highest);
+
+    Course course = Course(id, courseName, hours, kind, highest);
 
     courses.push_back(course);
 

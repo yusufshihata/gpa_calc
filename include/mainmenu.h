@@ -21,19 +21,19 @@ public:
 };
 
 void MainMenu::ui() {
-    std::cout << "-----------------------------------------------------------------------------------------------------------------------------------------------\n";
-    std::cout << "Welcome to the Artificial Intelligence Faculty Student Database\n";
-    std::cout << "1. Add Course.\n";
-    std::cout << "2. Add Student.\n";
-    std::cout << "3. Add Course to Student.\n";
-    std::cout << "4. Add Course Grade to Student.\n";
-    std::cout << "5. Get Course Info.\n";
-    std::cout << "6. Get Student Info.\n";
-    std::cout << "7. Exit the database.\n";
-    std::cout << "\nPress the number of the process you need to do (1-7).\n";
-    std::cout << "-----------------------------------------------------------------------------------------------------------------------------------------------\n";
-}
+    std::cout << "+-----------------------------------------------------------------+\n";
+    std::cout << "| Welcome to the Artificial Intelligence Faculty Student Database |\n";
+    std::cout << "| 1. Add Course.                                                  |\n";
+    std::cout << "| 2. Add Student.                                                 |\n";
+    std::cout << "| 3. Add Course to Student.                                       |\n";
+    std::cout << "| 4. Add Course Grade to Student.                                 |\n";
+    std::cout << "| 5. Get Course Info.                                             |\n";
+    std::cout << "| 6. Get Student Info.                                            |\n";
+    std::cout << "| 7. Exit the database.                                           |\n";
+    std::cout << "+-----------------------------------------------------------------+\n";
 
+    std::cout << "\nPress the number of the process you need to do (1-7).\n";
+}
 void MainMenu::addCourseUi() {
     CourseFactory::CreateCourse();
 }
@@ -60,6 +60,10 @@ void MainMenu::getStudentInfoUi() {
 
 void MainMenu::getCourseInfoUi() {
     int id;
+
+    for (auto course: courses) {
+        std::cout << course.getCourseId() << ". " << course.getName() << std::endl;
+    }
 
     std::cout << "Enter the course's id: ";
     std::cin >> id;
@@ -141,4 +145,3 @@ void MainMenu::controlUi() {
 }
 
 #endif
-
