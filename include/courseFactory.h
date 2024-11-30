@@ -16,7 +16,7 @@ void CourseFactory::CreateCourse() {
 
     std::string courseName;
     int id, hours, highest;
-    char kind;
+    char kind = 'A';
 
     id = numCourses;
 
@@ -27,8 +27,10 @@ void CourseFactory::CreateCourse() {
     std::cout << "Course Credit Hours: ";
     std::cin >> hours;
 
-    std::cout << "Subject Type: ";
-    std::cin >> kind;
+    while (toupper(kind) != 'P' && toupper(kind) != 'T' && toupper(kind) != 'H') {
+        std::cout << "Subject Type: ";
+        std::cin >> kind;
+    }
 
     std::cout << "Final Grade: ";
     std::cin >> highest;

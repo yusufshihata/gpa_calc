@@ -8,6 +8,7 @@
 #include "course.h"
 #include "courseFactory.h"
 #include <iostream>
+#include <iomanip>
 
 class Student {
 private:
@@ -49,11 +50,18 @@ void Student::showStudentCourses() {
 }
 
 void Student::displayStudentInfo() {
-    std::cout << "Student Id: " << this->id << "\n" << "Student Name: " << this->name << "\n" << "Student GPA: " << this->gpa << "\n" << "Registered Courses: ";
+    const int tableWidth = 65;
+    std::cout << "| " << std::setw(tableWidth - 1) << std::left << "Student Id: " + std::to_string(this->id) << "|\n";
+        std::cout << "| " << std::setw(tableWidth - 1) << std::left << "Student Name: " + this->name << "|\n";
+        std::cout << "| " << std::setw(tableWidth - 1) << std::left << "Student GPA: " + std::to_string(this->gpa) << "|\n";
+
+    std::cout << "| " << std::setw(tableWidth - 1) << "Registered Courses:" << "|\n";
+    
     for (auto course_id: this->registeredCoursesIds) {
-        std::cout << courses[course_id].getName() << ", ";
+        std::string courseInfo = "...." + courses.at(course_id).getName() + ": " + std::to_string(grades.at(course_id));
+        std::cout << "| " << std::setw(tableWidth - 1) << std::left << courseInfo << "|\n";
     }
-    std::cout << "\n" << "Registered Hours: " << this->registeredHours << "\n";
+    std::cout << "| " << std::setw(tableWidth - 1) << std::left << "Registered Hours: " + std::to_string(this->registeredHours) << "|\n";
 }
 
 void Student::addCourse(int course_id) {
@@ -118,42 +126,63 @@ void Student::addCourseGrade(int id, double grade) {
     Course course = CourseFactory::findCourse(id);
 
     if (course.getKind() == 'P' || course.getKind() == 'p') {
-        int oral, finalExam, project, attendance;
+        int oral, finalExam, project, attendance = -1;
         
-        std::cout << "Attendance Grade: ";
-        std::cin >> attendance;
+        while (attendance < 0 || attendance > 20) {
+            std::cout << "Attendance Grade: ";
+            std::cin >> attendance;
+        }
 
-        std::cout << "Oral Exam Grade: ";
-        std::cin >> oral;
+        while (oral < 0 || oral > 10) {
+            std::cout << "Oral Exam Grade: ";
+            std::cin >> oral;
+        }
 
-        std::cout << "Project Grade: ";
-        std::cin >> project;
+        while (project < 0 || project > 10) {
+            std::cout << "Project Grade: ";
+            std::cin >> project;
+        }
         
-        std::cout << "Final Exam Grade: ";
-        std::cin >> finalExam;
+        while (finalExam < 0 || finalExam > 60) {
+            std::cout << "Final Exam Grade: ";
+            std::cin >> finalExam;
+        }
 
         grade = oral + finalExam + project + attendance;
     } else if (course.getKind() == 'T' || course.getKind() == 't') {
-        int oral, finalExam, attendance;
+        int attendance = -1;
+        int finalExam = -1;
+        int oral = -1;
 
-        std::cout << "Attendance Grade: ";
-        std::cin >> attendance;
+        while (attendance < 0 || attendance > 30) {
+            std::cout << "Attendance Grade: ";
+            std::cin >> attendance;
+        }
 
-        std::cout << "Oral Exam Grade: ";
-        std::cin >> oral;
+        while (oral < 0 || oral > 10) {
+            std::cout << "Oral Exam Grade: ";
+            std::cin >> oral;
+        }
 
-        std::cout << "Final Exam Grade: ";
-        std::cin >> finalExam;
+        while (finalExam < 0 || finalExam > 60) {
+            std::cout << "Final Exam Grade: ";
+            std::cin >> finalExam;
+        }
 
         grade = oral + finalExam + attendance;
     } else {
-        int attendance, finalExam;
+        int attendance = -1; 
+        int finalExam = -1;
 
-        std::cout << "Attendance Grade: ";
-        std::cin >> attendance;
+        while (attendance < 0 || attendance > 20) {
+            std::cout << "Attendance Grade: ";
+            std::cin >> attendance;
+        }
 
-        std::cout << "Final Exam Grade: ";
-        std::cin >> finalExam;
+        while (finalExam < 0 || finalExam > 80) {
+            std::cout << "Final Exam Grade: ";
+            std::cin >> finalExam;
+        }
 
         grade = attendance + finalExam;
     }

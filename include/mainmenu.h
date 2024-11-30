@@ -50,12 +50,16 @@ void MainMenu::getStudentInfoUi() {
 
     Student student = StudentFactory::findStudent(id);
 
+    const int width = 65;
+    const char fill = '-';
+    const char border = '+';
 
-    std::cout << "-----------------------------------------------------------------------------------------------------------------------------------------------\n";
-    
+    std::cout << border << std::string(width, fill) << border << "\n";
+
     student.displayStudentInfo();
+
+    std::cout << border << std::string(width, fill) << border << "\n";
     
-    std::cout << "-----------------------------------------------------------------------------------------------------------------------------------------------\n";
 }
 
 void MainMenu::getCourseInfoUi() {
@@ -113,9 +117,6 @@ void MainMenu::addStudentCourseGradeUi() {
     std::cin >> idx;
 
     double grade;
-
-    std::cout << "Please Enter the grade for this course: ";
-    std::cin >> grade;
 
     student.addCourseGrade(idx, grade);
 }

@@ -164,5 +164,15 @@ CMakeFiles/GPACalc.dir/src/main.cpp.o: \
  /home/kyouma/dev/gpa_calc/include/course.h \
  /home/kyouma/dev/gpa_calc/include/student.h \
  /home/kyouma/dev/gpa_calc/include/courseFactory.h \
+ /usr/include/c++/14.2.1/iomanip /usr/include/c++/14.2.1/locale \
+ /usr/include/c++/14.2.1/bits/locale_facets_nonio.h \
+ /usr/include/c++/14.2.1/ctime \
+ /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/time_members.h \
+ /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/14.2.1/bits/codecvt.h \
+ /usr/include/c++/14.2.1/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/14.2.1/bits/locale_conv.h \
+ /usr/include/c++/14.2.1/bits/quoted_string.h \
+ /usr/include/c++/14.2.1/sstream /usr/include/c++/14.2.1/bits/sstream.tcc \
  /home/kyouma/dev/gpa_calc/include/studentFactory.h \
  /home/kyouma/dev/gpa_calc/include/mainmenu.h
