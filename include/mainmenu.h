@@ -74,11 +74,15 @@ void MainMenu::getCourseInfoUi() {
 
     Course course = CourseFactory::findCourse(id);
 
-    std::cout << "-----------------------------------------------------------------------------------------------------------------------------------------------\n";
+    const int width = 65;
+    const char fill = '-';
+    const char border = '+';
+
+    std::cout << border << std::string(width, fill) << border << "\n";
 
     course.showCourseInfo();
 
-    std::cout << "-----------------------------------------------------------------------------------------------------------------------------------------------\n";
+    std::cout << border << std::string(width, fill) << border << "\n";
 }
 
 void MainMenu::addStudentCourseUi() {

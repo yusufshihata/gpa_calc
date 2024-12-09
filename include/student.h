@@ -52,8 +52,8 @@ void Student::showStudentCourses() {
 void Student::displayStudentInfo() {
     const int tableWidth = 65;
     std::cout << "| " << std::setw(tableWidth - 1) << std::left << "Student Id: " + std::to_string(this->id) << "|\n";
-        std::cout << "| " << std::setw(tableWidth - 1) << std::left << "Student Name: " + this->name << "|\n";
-        std::cout << "| " << std::setw(tableWidth - 1) << std::left << "Student GPA: " + std::to_string(this->gpa) << "|\n";
+    std::cout << "| " << std::setw(tableWidth - 1) << std::left << "Student Name: " + this->name << "|\n";
+    std::cout << "| " << std::setw(tableWidth - 1) << std::left << "Student GPA: " + std::to_string(this->gpa) << "|\n";
 
     std::cout << "| " << std::setw(tableWidth - 1) << "Registered Courses:" << "|\n";
     
@@ -129,22 +129,22 @@ void Student::addCourseGrade(int id, double grade) {
         int oral, finalExam, project, attendance = -1;
         
         while (attendance < 0 || attendance > 20) {
-            std::cout << "Attendance Grade: ";
+            std::cout << "School Work Grade in range (0 - 20): ";
             std::cin >> attendance;
         }
 
         while (oral < 0 || oral > 10) {
-            std::cout << "Oral Exam Grade: ";
+            std::cout << "Oral Exam Grade in range (0 - 10): ";
             std::cin >> oral;
         }
 
         while (project < 0 || project > 10) {
-            std::cout << "Project Grade: ";
+            std::cout << "Project Grade in range (0 - 10): ";
             std::cin >> project;
         }
         
         while (finalExam < 0 || finalExam > 60) {
-            std::cout << "Final Exam Grade: ";
+            std::cout << "Final Exam Grade in range (0 - 60): ";
             std::cin >> finalExam;
         }
 
@@ -155,17 +155,17 @@ void Student::addCourseGrade(int id, double grade) {
         int oral = -1;
 
         while (attendance < 0 || attendance > 30) {
-            std::cout << "Attendance Grade: ";
+            std::cout << "School work Grade in range (0 - 30): ";
             std::cin >> attendance;
         }
 
         while (oral < 0 || oral > 10) {
-            std::cout << "Oral Exam Grade: ";
+            std::cout << "Oral Exam Grade in range (0 - 10): ";
             std::cin >> oral;
         }
 
         while (finalExam < 0 || finalExam > 60) {
-            std::cout << "Final Exam Grade: ";
+            std::cout << "Final Exam Grade in range (0 - 60): ";
             std::cin >> finalExam;
         }
 
@@ -175,12 +175,12 @@ void Student::addCourseGrade(int id, double grade) {
         int finalExam = -1;
 
         while (attendance < 0 || attendance > 20) {
-            std::cout << "Attendance Grade: ";
+            std::cout << "School work Grade in range (0 - 20): ";
             std::cin >> attendance;
         }
 
         while (finalExam < 0 || finalExam > 80) {
-            std::cout << "Final Exam Grade: ";
+            std::cout << "Final Exam Grade in range (0 - 80): ";
             std::cin >> finalExam;
         }
 

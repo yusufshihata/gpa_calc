@@ -1,1 +1,1 @@
-/usr/bin/c++ -Wl,--dependency-file,CMakeFiles/GPACalc.dir/link.d CMakeFiles/GPACalc.dir/src/main.cpp.o -o GPACalc
+/usr/sbin/c++ CMakeFiles/GPACalc.dir/src/main.cpp.o -o GPACalc

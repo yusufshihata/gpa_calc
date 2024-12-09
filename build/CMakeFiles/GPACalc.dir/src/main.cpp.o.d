@@ -1,6 +1,5 @@
-CMakeFiles/GPACalc.dir/src/main.cpp.o: \
- /home/kyouma/dev/gpa_calc/src/main.cpp /usr/include/stdc-predef.h \
- /usr/include/c++/14.2.1/iostream \
+CMakeFiles/GPACalc.dir/src/main.cpp.o: /root/dev/gpa_calc/src/main.cpp \
+ /usr/include/stdc-predef.h /usr/include/c++/14.2.1/iostream \
  /usr/include/c++/14.2.1/bits/requires_hosted.h \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/os_defines.h \
@@ -161,10 +160,8 @@ CMakeFiles/GPACalc.dir/src/main.cpp.o: \
  /usr/include/c++/14.2.1/tr1/poly_hermite.tcc \
  /usr/include/c++/14.2.1/tr1/poly_laguerre.tcc \
  /usr/include/c++/14.2.1/tr1/riemann_zeta.tcc \
- /home/kyouma/dev/gpa_calc/include/course.h \
- /home/kyouma/dev/gpa_calc/include/student.h \
- /home/kyouma/dev/gpa_calc/include/courseFactory.h \
- /usr/include/c++/14.2.1/iomanip /usr/include/c++/14.2.1/locale \
+ /root/dev/gpa_calc/include/course.h /usr/include/c++/14.2.1/iomanip \
+ /usr/include/c++/14.2.1/locale \
  /usr/include/c++/14.2.1/bits/locale_facets_nonio.h \
  /usr/include/c++/14.2.1/ctime \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/time_members.h \
@@ -174,5 +171,7 @@ CMakeFiles/GPACalc.dir/src/main.cpp.o: \
  /usr/include/c++/14.2.1/bits/locale_conv.h \
  /usr/include/c++/14.2.1/bits/quoted_string.h \
  /usr/include/c++/14.2.1/sstream /usr/include/c++/14.2.1/bits/sstream.tcc \
- /home/kyouma/dev/gpa_calc/include/studentFactory.h \
- /home/kyouma/dev/gpa_calc/include/mainmenu.h
+ /root/dev/gpa_calc/include/student.h \
+ /root/dev/gpa_calc/include/courseFactory.h \
+ /root/dev/gpa_calc/include/studentFactory.h \
+ /root/dev/gpa_calc/include/mainmenu.h

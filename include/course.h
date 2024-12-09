@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <iomanip>
 
 #define MAX_STUDENTS 400
 
@@ -22,7 +23,7 @@ public:
     std::string getName();
     int getHours();
     int getCourseId();
-    int getKind();
+    char getKind();
     int getHighestGrade();
     void showCourseInfo();
 };
@@ -43,7 +44,7 @@ int Course::getHighestGrade() {
     return this->highest;
 }
 
-int Course::getKind() {
+char Course::getKind() {
     return this->kind;
 }
 
@@ -59,11 +60,14 @@ Course::Course(int id, std::string courseName, int hours, char kind, int highest
 }
 
 void Course::showCourseInfo() {
-    std::cout << "Course Id: " << this->id << "\n";
-    std::cout << "Course name: " << this->courseName << "\n";
-    std::cout << "Number of hours: " << this->hours << "\n";
-    std::cout << "Type of Subject: " << this->kind << "\n";
-    std::cout << "The highest final grade: " << this->highest << "\n";
+    const int tableWidth = 65;
+    std::string s(1, this->kind);
+    
+    std::cout << "| " << std::setw(tableWidth - 1) << std::left << "Course Id: " + std::to_string(this->id) << "|\n";
+    std::cout << "| " << std::setw(tableWidth - 1) << std::left << "Course Name: " + this->courseName << "|\n";
+    std::cout << "| " << std::setw(tableWidth - 1) << std::left << "Number of Credit hours for this course: " + std::to_string(this->hours) << "|\n";
+    std::cout << "| " << std::setw(tableWidth - 1) << std::left << "Type of Course: " + s << "|\n";
+    std::cout << "| " << std::setw(tableWidth - 1) << std::left << "The highest final grade: " + std::to_string(this->highest) << "|\n";
 }
 
 #endif

@@ -28,7 +28,7 @@ void CourseFactory::CreateCourse() {
     std::cin >> hours;
 
     while (toupper(kind) != 'P' && toupper(kind) != 'T' && toupper(kind) != 'H') {
-        std::cout << "Subject Type: ";
+        std::cout << "Subject Type (P - H - T): ";
         std::cin >> kind;
     }
 
